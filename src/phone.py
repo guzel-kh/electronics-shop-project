@@ -2,7 +2,7 @@ from src.item import Item
 
 
 class Phone(Item):
-    def __init__(self, name: str, price: float, quantity: int, number_of_sim) -> None:
+    def __init__(self, name: str, price: float, quantity: int, number_of_sim: int) -> None:
         super().__init__(name, price, quantity)
         if number_of_sim < 1:
             raise ValueError('Количество физических SIM-карт должно быть целым числом больше нуля.')
