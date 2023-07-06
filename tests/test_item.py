@@ -1,6 +1,7 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
 import pytest
 from src.item import Item
+from src.phone import Phone
 
 
 @pytest.fixture
@@ -49,6 +50,16 @@ def test_string_to_number():
 def test_repr(item_test):
     assert repr(item_test) == "Item('Ноутбук', 20000, 5)"
 
+
 # TestCase#8 Str
 def test_str(item_test):
     assert str(item_test) == 'Ноутбук'
+
+
+# TestCase#9 Add
+def test_add(item_test):
+    phone_test = Phone("iPhone 14", 120_000, 5, 2)
+    assert item_test + phone_test == 10
+    assert phone_test + phone_test == 10
+    assert item_test + 1000 == None
+    assert phone_test + 1000 == None
